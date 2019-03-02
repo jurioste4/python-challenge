@@ -6,7 +6,10 @@ rawdata=os.path.join('election_data.csv')
 candidates = []
 total_candidates=[]
 candidates_perc = []
-candidates_total = []
+khan = 0
+#O"\'"Tooley = 0
+Correy = 0
+Li = 0
 #summaries = ([] for i in range(5))
 
 with open(rawdata, 'r') as csvfile:
@@ -18,20 +21,35 @@ with open(rawdata, 'r') as csvfile:
     num_rows = 0
     
     for row in csvreader : 
-        total_candidates.append(row[2])
         num_rows += 1
-       
-       # data = (('khan','Li'),('Correy', "O'Tooley"))
-    #unique_items = set(data)
-   # keys = [[entry[0]for entrys in unique_items]]
-    #for key in set(keys):
+        if row[2] == 'Khan':
+            khan += 1
+            #"O'Tooley"+= 1
+        if row[2] == 'Correy':
+            Correy += 1
+        if row[2] == 'Li':
+            Li += 1
+
+        if row[2]  not in candidates:
+            candidates.append(row[2])
+    #Khan_average = Khan/num_rows
+
+    
+
+        
+         
+              
+        
 
 
 
- #print("Candidate '{}' total {} votes". format(key, key.count(key)))
+ 
 print("Total Votes:", num_rows)
-
-
+print("All the candidates" ,*candidates, sep=',')
+print("Khan total votes "+ str(khan))
+print("Correy total votes "+ str(Correy))
+print("Li total votes "+ str(Li))
+#print("Khan total votes"+str("O'Tooley"))
 
 
 
