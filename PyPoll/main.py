@@ -54,12 +54,14 @@ print("Li total votes "+ str(Li))
 
 
 
-#test = os.path.join("pybanktest.txt")
+test = os.path.join("polltest.txt")
 
-#with open(test, 'w' , newline= '') as csvfile:
+with open(test, 'w' , newline= '') as csvfile:
 
-    #csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter = csv.writer(csvfile, delimiter=',')
 
-    #csvwriter.writerow(["total Months:",totalmonths])
-    #csvwriter.writerow(["Profit total:",profit_loss])
-    
+    csvwriter.writerow(["total votes:",num_rows])
+    csvwriter.writerow(["All the candidates" ,*candidates])
+    csvwriter.writerow(["Correy total votes "+ str(Correy)])
+    csvwriter.writerow(["Khan's total Votes ", str(khan)])
+    csvwriter.writerow(["Li total Votes "+ str(Li)])
